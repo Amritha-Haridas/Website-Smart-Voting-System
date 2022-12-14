@@ -1,0 +1,61 @@
+{% extends 'user.html' %}
+
+        <!-- Content Header (Page header) -->
+        {% block content %}
+       <!-- Main content -->
+        <section class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">Candidate Details </h3>
+                            </div>
+                            <!-- /.card-header -->
+                            <div class="card-body">
+                                <table id="example2" class="table table-bordered table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>Candidate Name</th>
+                                            <th>party name</th>
+                                            <th>photo</th>
+                                            <th>logo</th>
+                                            <th>Vote</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% for j in data %}
+                                        <tr>
+                                            <td>{{j.candidatename }}</td>
+                                            <td>{{j.partyname}}</td>
+                                            <td><img src="{{j.photo.url}}"  style="width:60px ; height:60px"></td>
+                                            <td><img src="{{j.logo.url}}"  style="width:60px ; height:60px"></td>
+                                            <td><a href="{% url 'vote' did=j.id %}"><button class="btn btn-success">VOTE</button></a></td>
+                                        </tr>
+                                        {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                            <!-- /.card-body -->
+                        </div>
+                    </div>
+                    <!-- /.col -->
+                </div>
+                <!-- /.row -->
+            </div>
+            <!-- /.container-fluid -->
+        </section>
+        <div class="call-to-action">
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-8">
+                  <h2>Make your decision-making process modern, secure, and effective.</h2>
+                  <h2>***************************************</h2>
+                  <h4> Upgrade from manually counting ballots to an online election system without sacrificing the integrity of your vote</h4>
+                </div>
+              </div>
+            </div>
+          </div>
+        {% endblock %}
+        <!-- /.content -->
+    

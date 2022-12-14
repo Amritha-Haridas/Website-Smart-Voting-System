@@ -1,0 +1,90 @@
+{% extends 'user.html' %}
+{% load static %}
+
+  <!-- ***** Header Area End ***** -->
+  {% block content %} 
+
+  <div class="second-page-heading">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <h4>Voting System</h4>
+          <h2>Any Time Any Where Any Device</h2>
+          <p>he best argument against democracy is a five-minute conversation with the average voter</p>
+          <div class="main-button"><a href="about.html">Discover More</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="more-info reservation-info">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 col-sm-6">
+          <div class="info-item">
+            <i class="fa fa-phone"></i>
+            <h4>Make a Phone Call</h4>
+            <a href="#">9678346520</a>
+          </div>
+        </div>
+        <div class="col-lg-4 col-sm-6">
+          <div class="info-item">
+            <i class="fa fa-envelope"></i>
+            <h4>Contact Us via Email</h4>
+            <a href="#">onlinevoting@email.com</a>
+          </div>
+        </div>
+        <div class="col-lg-4 col-sm-6">
+          <div class="info-item">
+            <i class="fa fa-map-marker"></i>
+            <h4>Visit Our Offices</h4>
+            <a href="#">24 line@ Trivandram</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="reservation-form">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+         
+        </div>
+        <div class="col-lg-12">
+          <form  action="{% url 'getitem' %}" id="reservation-form"  method="post"  name="gs" role="search" >
+            {% csrf_token %}
+            <div class="row">
+              <div class="col-lg-12">
+                <h4>LOGIN<em></em> <em>FORM</em></h4>
+              </div>
+              <div class="col-lg-6">
+                  <fieldset>
+                      <label for="name" class="form-label">Your Name</label>
+                      <input type="text" name="username" class="username" placeholder="Enter Name" id="name" autocomplete="on" required>
+                  </fieldset>
+              </div>
+             
+              <div class="col-lg-6">
+                <fieldset>
+                    <label for="password" class="form-label">Your Password</label>
+                    <input type="text" name="password" class="password" placeholder="Enter Password" id="password" autocomplete="on" required>
+                </fieldset>
+              </div>
+              <div class="col-lg-12">                        
+                  <fieldset>
+                      <button type="submit" class="main-button">Login</button>
+                  </fieldset>
+              </div>
+            </div>
+          </form>
+          <p>{{msg}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endblock %}
+ 
+
+ 
+ 

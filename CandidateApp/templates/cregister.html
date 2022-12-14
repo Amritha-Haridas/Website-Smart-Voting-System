@@ -1,0 +1,210 @@
+{% extends 'chome.html' %}
+{% load static %}
+
+  <!-- ***** Header Area End ***** -->
+  {% block content %} 
+
+  <div class="second-page-heading">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <h4>Voting System</h4>
+          <h2>Any Time Any Where Any Device</h2>
+          <p>The best argument against democracy is a five-minute conversation with the average voter</p>
+          <div class="main-button"><a href="about.html">Discover More</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="more-info reservation-info">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 col-sm-6">
+          <div class="info-item">
+            <i class="fa fa-phone"></i>
+            <h4>Make a Phone Call</h4>
+            <a href="#">9678346520</a>
+          </div>
+        </div>
+        <div class="col-lg-4 col-sm-6">
+          <div class="info-item">
+            <i class="fa fa-envelope"></i>
+            <h4>Contact Us via Email</h4>
+            <a href="#">onlinevoting@email.com</a>
+          </div>
+        </div>
+        <div class="col-lg-4 col-sm-6">
+          <div class="info-item">
+            <i class="fa fa-map-marker"></i>
+            <h4>Visit Our Offices</h4>
+            <a href="#">24 line@ Trivandram</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="reservation-form">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+         
+        </div>
+        <div class="col-lg-12">
+          <form id="reservation-form" name="gs" method="post" role="search" action="{% url 'getDatas' %}"  enctype = "multipart/form-data">
+            {% csrf_token %}
+            <div class="row">
+              <div class="col-lg-12">
+                <h4>REGISTER <em></em> <em>FORM</em></h4>
+              </div>
+              <div class="col-lg-6">
+                <fieldset>
+                    <label for="cid" class="form-label">Your ID</label>
+                    <input type="text" name="candidateid" class="Name" placeholder="Enter ID" id="cid" autocomplete="on" required>
+                </fieldset>
+            </div>
+              <div class="col-lg-6">
+                  <fieldset>
+                      <label for="name" class="form-label">Your Name</label>
+                      <input type="text" name="candidatename" class="Name" placeholder="Enter Name" id="cname" autocomplete="on" required>
+                  </fieldset>
+              </div>
+              <div class="col-lg-6">
+                <fieldset>
+                    <label for="pame" class="form-label">Party Name</label>
+                    <input type="text" name="partyname" class="Name" placeholder="Enter Name" id="pname" autocomplete="on" required>
+                </fieldset>
+            </div>
+            <div class="col-lg-6">
+                <fieldset>
+                    <label for="msupport" class="form-label">Member Support</label>
+                    <input type="text" name="membersprt" class="Name" placeholder="Enter number" id="msupport" autocomplete="on" required>
+                </fieldset>
+            </div>
+            <div class="col-lg-6">
+                <fieldset>
+                    <label for="age" class="form-label">Your Age</label>
+                    <input type="text" name="age" class="Name" placeholder="Enter ID" id="age" autocomplete="on" required>
+                </fieldset>
+            </div>
+            <div class="col-lg-6">
+                <fieldset>
+                    <label for="email" class="form-label">Your email</label>
+                    <input type="text" name="email" class="Name" placeholder="Enter email" id="email" autocomplete="on" required>
+                </fieldset>
+            </div>
+            <div class="col-lg-6">
+                <fieldset>
+                    <label for="number" class="form-label">Your Number</label>
+                    <input type="text" name="phone" class="Name" placeholder="Enter Number" id="number" autocomplete="on" required>
+                </fieldset>
+            </div>
+              <div class="col-lg-6">
+                <fieldset>
+                    <label for="name" class="form-label">Your Address</label>
+                    <input type="text" name="address" class="Name" placeholder="Enter Address" id="name" autocomplete="on" required>
+                </fieldset>
+              </div>
+              <div class="col-lg-6">
+                <fieldset>
+                    <label for="number" class="form-label">Photo</label>
+                    <input type="file" class="form-control" id="photo" name="photo">
+                </fieldset>
+            </div>
+
+            <div class="col-lg-6">
+                <fieldset>
+                    <label for="number" class="form-label">Logo</label>
+                    <input type="file" class="form-control" id="photo" name="logo">
+                </fieldset>
+            </div>
+            <div class="col-lg-6">
+                <fieldset>
+                    <label for="pas" class="form-label">Username</label>
+                    <input type="text" name="username" class="pas" placeholder="Enter Username" id="pass" autocomplete="on" required>
+                </fieldset>
+              </div>
+              <div class="col-lg-6">
+                <fieldset>
+                    <label for="password" class="form-label">Your Password</label>
+                    <input type="text" name="password" class="password" placeholder="Enter Password" id="password" autocomplete="on" required>
+                </fieldset>
+              </div>
+            
+              
+              
+            
+              <div class="col-lg-12">                        
+                  <fieldset>
+                      <button  type="submit" class="main-button">Submit</button>
+                  </fieldset>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <head>
+  <style type="text/css">
+    .error{
+    color: red
+    }
+    </style>
+    </head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.js"></script>
+  <script type="text/javascript">
+   $('#reservation-form').validate({
+   rules: {
+   candidateid: {
+   required: true,
+   minlength: 2
+   },
+   candidatename: {
+   required: true,
+   minlength: 5
+   },
+   partyname: {
+   required: true,
+   minlength: 2
+   },
+   membersprt: {
+   required: true,
+   minlength: 1
+   },
+   age: {
+   required: true,
+   minlength: 2
+   },
+   email:{
+   required:true,
+   email:true
+   },
+   phone:{
+   required:true,
+   minlength: 10
+   },
+   username: {
+   required: true,
+   minlength: 5
+   },
+   password:{
+   required:true,
+   minlength: 5
+   }
+   
+
+   }
+  
+  
+   })
+  
+  
+  </script>
+
+
+    {% endblock %}
+ 
+    

@@ -1,0 +1,99 @@
+{% extends 'user.html' %}
+{% load static %}
+
+  <!-- ***** Header Area End ***** -->
+  {% block content %} 
+
+  <div class="second-page-heading">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <h4>Voting System</h4>
+          <h2>Any Time Any Where Any Device</h2>
+          <p>The best argument against democracy is a five-minute conversation with the average voter</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="more-info reservation-info">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 col-sm-6">
+          <div class="info-item">
+            <i class="fa fa-phone"></i>
+            <h4>Make a Phone Call</h4>
+            <a href="#">9678346520</a>
+          </div>
+        </div>
+        <div class="col-lg-4 col-sm-6">
+          <div class="info-item">
+            <i class="fa fa-envelope"></i>
+            <h4>Contact Us via Email</h4>
+            <a href="#">onlinevoting@email.com</a>
+          </div>
+        </div>
+        <div class="col-lg-4 col-sm-6">
+          <div class="info-item">
+            <i class="fa fa-map-marker"></i>
+            <h4>Visit Our Offices</h4>
+            <a href="#">24 line@ Trivandram</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="reservation-form">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+         
+        </div>
+        <div class="col-lg-12">
+          <form id="reservation-form" name="gs" method="post" role="search" action="{% url 'getmethod' %}">
+            {% csrf_token %}
+            <div class="row">
+              <div class="col-lg-12">
+                <h4> <em></em>GET IN<em>TOUCH WITH US</em></h4>
+              </div>
+              <div class="col-lg-6">
+                  <fieldset>
+                      <label for="name" class="form-label">Your Name</label>
+                      <input type="text" name="cname" class="Name" placeholder="Enter Name" id="name" autocomplete="on" required>
+                  </fieldset>
+              </div>
+              <div class="col-lg-6">
+                <fieldset>
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" name="email" class="email" placeholder="Enter Email" id="email" autocomplete="on" required>
+                </fieldset>
+              </div>
+              <div class="col-lg-6">
+                <fieldset>
+                    <label for="phone" class="form-label">phone</label>
+                    <input type="number" name="phone" class="phone" placeholder="Enter Number" id="phone" autocomplete="on" required>
+                </fieldset>
+              </div>
+              <div class="col-lg-6">
+                <fieldset>
+                    <label for="msg" class="form-label">Message</label>
+                    <textarea class="form-control" id="msg" rows="2" placeholder="Enter Message" name="message"></textarea>
+                </fieldset>
+              </div>
+            
+              <div class="col-lg-12">                        
+                  <fieldset>
+                      <button  type="submit" class="main-button">Submit</button>
+                  </fieldset>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+    {% endblock %}
+ 

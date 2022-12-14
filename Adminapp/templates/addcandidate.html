@@ -1,0 +1,114 @@
+{% extends 'index.html' %}
+            <!-- Content Header (Page header) -->
+            {% block content %}
+            <section class="content-header">
+                <div class="container-fluid">
+                    <div class="row mb-2">
+                        <div class="col-sm-6">
+                            <h1>CANDIDATES</h1>
+                        </div>
+                        <div class="col-sm-6">
+                            <ol class="breadcrumb float-sm-right">
+                                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                <li class="breadcrumb-item active">General Form</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div><!-- /.container-fluid -->
+            </section>
+
+            <!-- Main content -->
+            <section class="content">
+                <div class="container-fluid">
+                    <div class="row">
+                        <!-- left column -->
+                        <div class="col-md-9">
+                            <!-- general form elements -->
+                            <div class="card card-primary">
+                                <div class="card-header">
+                                    <h3 class="card-title">ADD CANDIDATES</h3>
+                                </div>
+                                <!-- /.card-header -->
+                                <!-- form start -->
+                                <form action="{% url 'getData' %}" method="post" enctype="multipart/form-data">
+                                    {% csrf_token %}
+                                    <div class="card-body">
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail1">Candidate ID </label>
+                                            <input type="number" class="form-control" id="cid" name="cid"
+                                                placeholder="Enter id">
+                                        </div>
+
+
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail1">Candidate Name </label>
+                                            <input type="text" class="form-control" id="cname" name="cname"
+                                                placeholder="Enter name">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail1">Party Name </label>
+                                            <input type="text" class="form-control" id="pname" name="pname"
+                                                placeholder="Enter party name">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail1">Member Support </label>
+                                            <input type="number" class="form-control" id="msupport" name="msupport"
+                                                placeholder="Enter number">
+
+
+                                            <div class="form-group">
+                                                <label for="exampleInputEmail1">Age </label>
+                                                <input type="number" class="form-control" id="age" name="age"
+                                                    placeholder="Enter age">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="exampleInputEmail1">email </label>
+                                                <input type="email" class="form-control" id="email" name="email"
+                                                    placeholder="Enter email">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="exampleInputEmail1">Phone Number </label>
+                                                <input type="number" class="form-control" id="number" name="number"
+                                                    placeholder="Enter no">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="location">Address</label>
+                                                <textarea class="form-control" id="address" rows="3" name="address"
+                                                    placeholder="Enter address"></textarea>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="">photo</label>
+                                                <div class="input-group">
+                                                    <div class="custom-file">
+                                                        <input type="file" class="form-control" id="photo" name="photo">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="">logo</label>
+                                                <div class="input-group">
+                                                    <div class="custom-file">
+                                                        <input type="file" class="form-control" id="logo" name="logo">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- /.card-body -->
+
+                                            <div class="card-footer">
+                                                <button type="submit" class="btn btn-primary">Submit</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <!--/.col (right) -->
+                    </div>
+                    <!-- /.row -->
+                </div><!-- /.container-fluid -->
+            </section>
+            {% endblock %}
+            <!-- /.content -->
+       
